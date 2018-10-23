@@ -1,0 +1,89 @@
+﻿@using CAS.Models
+@model LoginViewModel
+@{
+    Layout = null;
+}
+
+<style>
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 10%;
+    }
+
+    #loginForm {
+        margin-left: auto;
+        margin-right: auto;
+        border: 1px solid #ccc;
+        padding: 10px 10px;
+        width: 15%;
+    }
+    
+    body {
+        background-image: url(/src/img/logincas.png) !important;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+</style>
+
+<div class="col-md-10">
+<h2>@ViewBag.Title</h2>
+<div class="row">
+    <div class="col-md-8">
+        <div class="col-md-3 col-centered">
+            <div>
+                <img class="profile-img center" src="~/src/img/user.png" />
+                <section id="loginForm">
+                    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                    <h4>Usa tu cuenta para iniciar sesión</h4>
+                        <hr />
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "Correo", @required = "", @autofocus = "" })
+                                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                            <div class="col-md-10">
+                                @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder="Contraseña", @required="", @autofocus=""})
+                                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <div class="checkbox">
+                                    @Html.CheckBoxFor(m => m.RememberMe)
+                                    @Html.LabelFor(m => m.RememberMe)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Iniciar sesión" class="btn btn-default" />
+                            </div>
+                        </div>
+                        <p>
+                            @Html.ActionLink("Registrate como nuevo usuario", "Register")
+                        </p>
+                        @* Enable this once you have account confirmation enabled for password reset functionality
+                    <p>
+                        @Html.ActionLink("Forgot your password?", "ForgotPassword")
+                    </p>*@
+                    }
+                </section>
+            </div>
+        </div>
+</div>
+</div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
