@@ -209,6 +209,7 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="css\mui.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -248,6 +249,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+<<<<<<< HEAD
+    <Content Include="src\img\00c5296365ee8b3318ff543b06abdf70.svg" />
+=======
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
@@ -256,9 +260,11 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+>>>>>>> master
     <Content Include="src\img\dis.png" />
     <Content Include="src\img\fond.png" />
     <Content Include="src\img\logincas.png" />
+    <Content Include="src\img\logo-cas.svg" />
     <Content Include="src\img\logocas.png" />
     <Content Include="src\img\no.png" />
     <Content Include="src\img\poc.png" />
